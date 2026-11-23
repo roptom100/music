@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Artist Name - Track / Album Title</title>
+  <style>
+    :root {
+      --bg-color: #0b0c10;
+      --card-bg: rgba(20, 20, 25, 0.75);
+      --text-main: #ffffff;
+      --text-muted: #a0a0a5;
+      --btn-bg: #22222a;
+      --btn-hover: #33333f;
+      --accent: #1db954;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Blurred background artwork effect */
+    .bg-blur {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=800') center/cover no-repeat;
+      filter: blur(40px) brightness(0.35);
+      transform: scale(1.1);
+      z-index: -1;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      background: var(--card-bg);
+      backdrop-filter: blur(15px);
+      -webkit-backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 18px;
+      padding: 24px;
+      text-align: center;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6);
+    }
+
+    .artwork {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      border-radius: 12px;
+      object-fit: cover;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+      margin-bottom: 20px;
+    }
+
+    .title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+
+    .artist {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+    }
+
+    .link-list {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .link-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--btn-bg);
+      padding: 12px 18px;
+      border-radius: 10px;
+      transition: background 0.2s ease, transform 0.1s ease;
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .link-row:hover {
+      background: var(--btn-hover);
+      transform: translateY(-1px);
+    }
+
+    .platform-name {
+      font-size: 0.95rem;
+      font-weight: 600;
+    }
+
+    .action-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .footer {
+      margin-top: 24px;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="bg-blur"></div>
+
+  <div class="container">
+    <!-- Replace with your album/single cover -->
+    <img src="https://images.unsplash.com/photo-1614613535308-eb5fbd3d2c17?w=800" alt="Cover Art" class="artwork">
+
+    <h1 class="title">Release Title</h1>
+    <p class="artist">Artist Name</p>
+
+    <div class="link-list">
+      <!-- Spotify -->
+      <a href="https://open.spotify.com" target="_blank" rel="noopener" class="link-row">
+        <span class="platform-name">Spotify</span>
+        <span class="action-btn">Play</span>
+      </a>
+
+      <!-- Apple Music -->
+      <a href="https://music.apple.com" target="_blank" rel="noopener" class="link-row">
+        <span class="platform-name">Apple Music</span>
+        <span class="action-btn">Play</span>
+      </a>
+
+      <!-- YouTube -->
+      <a href="https://youtube.com" target="_blank" rel="noopener" class="link-row">
+        <span class="platform-name">YouTube</span>
+        <span class="action-btn">Watch</span>
+      </a>
+
+      <!-- SoundCloud -->
+      <a href="https://soundcloud.com" target="_blank" rel="noopener" class="link-row">
+        <span class="platform-name">SoundCloud</span>
+        <span class="action-btn">Listen</span>
+      </a>
+    </div>
+
+    <div class="footer">
+      Choose your preferred music service
+    </div>
+  </div>
+
+</body>
+</html>
